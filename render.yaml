@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: madara-ai-studio
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    plan: free
+    healthCheckPath: /api/status
